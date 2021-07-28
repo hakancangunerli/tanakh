@@ -1,5 +1,6 @@
 $(document).ready(function () {
-	var quoteSource = [
+	
+	var quoteSource =[
 		{
 			english:
 				"The House that I intend to build will be great, inasmuch as our God is greater than all gods.",
@@ -70,24 +71,24 @@ $(document).ready(function () {
 
 	];
 
-	$("#quoteButton").click(function (evt) {
+	$("#quoteButton").click(function (evt:any ) {
 
-		var quote = $("#quoteContainer p").text();
-		var quoteGenius = $("#quoteGenius").text();
+		var quote : string = $("#quoteContainer p").text();
+		var quoteGenius : string = $("#quoteGenius").text();
 		
 
-		var sourceLength = quoteSource.length;
-		var randomNumber = Math.floor(Math.random() * sourceLength);
+		var sourceLength:number  = quoteSource.length;
+		var randomNumber :number = Math.floor(Math.random() * sourceLength);
 		//set a new quote
-		for (let i = 0; i <= sourceLength; i += 1) {
-			var English = quoteSource[randomNumber].english;
-			var Hebrew = quoteSource[randomNumber].hebrew;
+		for (let i:number   = 0; i <= sourceLength; i += 1) {
+			var English :string = quoteSource[randomNumber].english;
+			var Hebrew :string = quoteSource[randomNumber].hebrew;
 
-			var English_Location = quoteSource[randomNumber].english_source;
-			var Hebrew_Location = quoteSource[randomNumber].hebrew_source;
+			var English_Location :string = quoteSource[randomNumber].english_source;
+			var Hebrew_Location :string = quoteSource[randomNumber].hebrew_source;
 
-			var timeAnimation = 300;
-			var quoteContainer = $("#quoteContainer");
+			var timeAnimation :number = 300;
+			var quoteContainer :any  = $("#quoteContainer");
 			//fade out animation with callback
 			quoteContainer.fadeOut(timeAnimation, function () {
 				quoteContainer.html("");
