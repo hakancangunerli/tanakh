@@ -1,6 +1,6 @@
 $(document).ready(function () {
-	
-	var quoteSource =[
+
+	var quoteSource = [
 		{
 			english:
 				"The House that I intend to build will be great, inasmuch as our God is greater than all gods.",
@@ -63,32 +63,32 @@ $(document).ready(function () {
 
 
 
-// todo: add more. maybe write an api to take care of this issue instead of doing it like this. 
-// todo: add sefaria links to each.  
+		// todo: add more. maybe write an api to take care of this issue instead of doing it like this. 
+		// todo: add sefaria links to each.  
 
 
 
 
 	];
 
-	$("#quoteButton").click(function (evt:any ) {
+	$("#quoteButton").click(function (evt: any) {
 
-		var quote : string = $("#quoteContainer p").text();
-		var quoteGenius : string = $("#quoteGenius").text();
-		
-
-		var sourceLength:number  = quoteSource.length;
-		var randomNumber :number = Math.floor(Math.random() * sourceLength);
+		var quote: string = $("#quoteContainer p").text();
+		var quoteGenius: string = $("#quoteGenius").text();
+		var sourceLength: number = quoteSource.length;
+		var randomNumber: number = Math.floor(Math.random() * sourceLength);
 		//set a new quote
-		for (let i:number   = 0; i <= sourceLength; i += 1) {
-			var English :string = quoteSource[randomNumber].english;
-			var Hebrew :string = quoteSource[randomNumber].hebrew;
 
-			var English_Location :string = quoteSource[randomNumber].english_source;
-			var Hebrew_Location :string = quoteSource[randomNumber].hebrew_source;
 
-			var timeAnimation :number = 300;
-			var quoteContainer :any  = $("#quoteContainer");
+		for (let i: number = 0; i <= sourceLength; i += 1) {
+			var English: string = quoteSource[randomNumber].english;
+			var Hebrew: string = quoteSource[randomNumber].hebrew;
+
+			var English_Location: string = quoteSource[randomNumber].english_source;
+			var Hebrew_Location: string = quoteSource[randomNumber].hebrew_source;
+
+			var timeAnimation: number = 300;
+			var quoteContainer: any = $("#quoteContainer");
 			//fade out animation with callback
 			quoteContainer.fadeOut(timeAnimation, function () {
 				quoteContainer.html("");
@@ -97,7 +97,7 @@ $(document).ready(function () {
 					English +
 					"</p>" +
 					'<p id="quoteGenius">' +
-					
+
 					English_Location +
 					"</p>"
 				);
@@ -118,6 +118,6 @@ $(document).ready(function () {
 			});
 
 			break;
-		} 
-	}); 
-}); 
+		}
+	});
+});
